@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>WDebugOut</Title>
+      <Author>ans</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="cpp" Delimiter="$"><![CDATA[    {
+        std::stringstream ss;
+        ss << ":DEBUG:  " << __FILE__ << "  Line:" << __LINE__ << "  " << __FUNCTION__ << " --> " << " " << "\n";
+        std::wstring ws;
+        std::string plainString = ss.str();
+        ws.assign(plainString.begin(), plainString.end());
+        OutputDebugString(ws.c_str());
+    }
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

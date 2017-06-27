@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Timing</Title>
+      <Author>ans</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="cpp" Delimiter="$"><![CDATA[        {
+            time_t timeNow = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+            char timeBuf[64];
+            ctime_s(timeBuf, 64, &timeNow);
+            std::stringstream ss;
+            ss << ":DEBUG:  " << __FILE__ << "  Line:" << __LINE__ << "  " << __FUNCTION__ << " --> " << " START: " << timeBuf << "\n";
+            OutputDebugString(ss.str().c_str());
+        }
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

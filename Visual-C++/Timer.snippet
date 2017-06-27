@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Timer</Title>
+      <Author>ans</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="cpp" Delimiter="$">
+      <![CDATA[    
+          {
+        std::stringstream ss;
+        ss << ":DEBUG:  " << __FILE__ << "  " << __FUNCTION__ << " START...\n";
+        OutputDebugString(ss.str().c_str());
+    }
+    double start_time = clock();
+
+    double end_time = clock();
+    double dtime = end_time - start_time;
+    {
+        std::stringstream ss;
+        ss << ":DEBUG:  " << __FILE__ << "  " << __FUNCTION__ << " time(secs): " << std::defaultfloat << ((float)dtime)/ CLOCKS_PER_SEC << "\n";
+        OutputDebugString(ss.str().c_str());
+    }
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
